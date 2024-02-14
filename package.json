@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "pkill reverse-proxy || true && bun --hot run .",
+    "build": "bun build . --compile --outfile reverse-proxy && ./reverse-proxy &"
+  },
+  "dependencies": {
+    "@types/bun": "^1.0.5"
+  }
+}

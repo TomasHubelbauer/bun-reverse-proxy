@@ -1,0 +1,6 @@
+# Node
+node_modules
+
+# Bun
+bun.lockb
+reverse-proxy
