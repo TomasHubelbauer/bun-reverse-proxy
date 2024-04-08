@@ -21,10 +21,13 @@ console.log(
       }
 
       const url = new URL(request.url);
+      const host = url.host;
       url.hostname = 'localhost';
       url.port = map[name].toString();
+      const proxyRequest = new Request(url, request);
+      proxyRequest.headers.set("Host", host);
 
-      return await fetch(new Request(url, request));
+      return await fetch(proxyRequest, { redirect: "manual" });
     },
   }).url.href
 );
